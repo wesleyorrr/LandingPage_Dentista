@@ -1,2 +1,114 @@
- 
+ <!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plano Odontológico</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/script.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#faq">Perguntas</a></li>
+        <li><a href="#duvida">Dúvida</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="carousel">
+      <button class="prev">◀</button>
+      <img src="img1.jpg" class="carousel-image" alt="Imagem 1">
+     
+      <button class="next">▶</button>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="icon-carousel">
+      <div class="icon-slide active">
+        <i>📦</i>
+        <p>Cobertura extra nos plano nacionais</p>
+      </div>
+      <div class="icon-slide">
+        <i>🦷</i>
+        <p>Dentista credenciado em todo Brasil</p>
+      </div>
+      <div class="icon-slide">
+        <i>🖼️</i>
+        <p>Radiografia e raio X panorâmico em todos os planos</p>
+      </div>
+      <div class="icon-slide">
+        <i>💻</i>
+        <p>Contratação online</p>
+      </div>
+      <div class="icon-slide">
+        <i>📞</i>
+        <p>Central de atendimento 24 horas por dia</p>
+      </div>
+      <div class="icon-slide">
+        <i>🚑</i>
+        <p>Pronto socorro odontológico 24 horas</p>
+      </div>
+      <div class="icon-slide">
+        <i>💳</i>
+        <p>Use amanhã, pagamento com cartão e boleto antecipado</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="planos">
+    <div class="card">
+      <h3>Plano Dental</h3>
+      <p>Perfeito para cuidar do seu sorriso no dia a dia.</p>
+      <button>➡</button>
+    </div>
+    <div class="card">
+      <h3>Clareamento</h3>
+      <p>Dê brilho ao seu sorriso com nossos especialistas.</p>
+      <button>➡</button>
+    </div>
+    <div class="card">
+      <h3>Prótese</h3>
+      <p>Recupere a função e estética dos seus dentes.</p>
+      <button>➡</button>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-item">
+      <img src="cliente1.jpg" alt="Cliente 1">
+      <p><strong>@cliente1:</strong> Sim, o plano me ajudou muito! Recomendo.</p>
+    </div>
+    <!-- Repita 10 vezes com perguntas/respostas fake -->
+  </section>
+
+  <section id="duvida">
+    <h3>Coloque aqui sua dúvida</h3>
+    <input type="text" id="duvidaInput" placeholder="Digite sua dúvida aqui...">
+    <button onclick="enviarParaWhatsapp()">Enviar para WhatsApp</button>
+  </section>
+
+  <section id="contato">
+    <h2>Contatos</h2>
+    <div class="redes">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">WhatsApp</a>
+    </div>
+    <div class="mapa">
+      <p>Endereço: Rua Exemplo, 123 - Centro, Curvelo - MG</p>
+      <iframe src="https://www.google.com/maps?q=Curvelo,+MG&output=embed"></iframe>
+    </div>
+  </section>
+</body>
+</html>
 
