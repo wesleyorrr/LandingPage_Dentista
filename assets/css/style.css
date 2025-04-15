@@ -1,82 +1,534 @@
-/* style.css */
+/* Reset e estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e6f0ff;
-    color: #000;
-    margin: 0;
-    padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f9ff;
+}
+
+/* Header e navegação */
+header {
+  background-color: #3399ff;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #2a7fd1;
+}
+
+.mobile-menu {
+  display: none;
+  padding: 15px;
+  cursor: pointer;
+}
+
+/* Seções */
+.section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2a7fd1;
+  font-size: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #3399ff;
+  margin: 15px auto;
+}
+
+/* Carrossel */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(51, 153, 255, 0.7);
+  color: white;
+  border: none;
+  padding: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.carousel-control:hover {
+  background-color: #3399ff;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-indicators span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.carousel-indicators span.active {
+  background-color: white;
+}
+
+/* Seção de Benefícios Atualizada */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.benefit-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.benefit-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.benefit-card:hover .benefit-image img {
+  transform: scale(1.05);
+}
+
+.benefit-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.benefit-content h3 {
+  color: #3399ff;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.benefit-content p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Planos */
+.plans-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.plan-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+}
+
+.plan-card h3 {
+  color: #3399ff;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.plan-card ul {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.plan-card ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.plan-card ul li:last-child {
+  border-bottom: none;
+}
+
+.plan-button {
+  background-color: #3399ff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.plan-button:hover {
+  background-color: #2a7fd1;
+}
+
+.featured-badge {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background-color: #ff6b6b;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* FAQ */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq-question img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.faq-question i {
+  margin-left: auto;
+  transition: transform 0.3s;
+}
+
+.faq-answer {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 20px 20px;
+}
+
+/* Dúvida */
+.doubt-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  display: flex;
+  margin-top: 20px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  border-radius: 50px 0 0 50px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.input-group button {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 0 25px;
+  border-radius: 0 50px 50px 0;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s;
+}
+
+.input-group button:hover {
+  background-color: #128C7E;
+}
+
+/* Contato */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.social-media {
+  flex: 1;
+  min-width: 250px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.social-link i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.social-link:hover {
+  transform: translateX(10px);
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.instagram {
+  background-color: #E1306C;
+}
+
+.whatsapp {
+  background-color: #25D366;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.address {
+  margin-bottom: 20px;
+}
+
+.address h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #3399ff;
+  margin-bottom: 10px;
+}
+
+.map-container {
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Footer */
+footer {
+  background-color: #2a7fd1;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  nav ul {
-    display: flex;
-    list-style: none;
-    background: #3399ff;
-    padding: 10px;
-    justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: block;
   }
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  .carousel, .icon-carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-    position: relative;
-  }
-  .carousel-image {
-    width: 80%;
-    height: 300px;
-    object-fit: cover;
-  }
-  .prev, .next {
-    background: #3399ff;
-    border: none;
-    color: #fff;
-    font-size: 20px;
-    padding: 10px;
-    cursor: pointer;
-  }
-  .icon-slide {
+  
+  .nav-list {
     display: none;
     flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    background: #fff;
-    border: 1px solid #ccc;
-    margin: 10px;
-    border-radius: 10px;
+    width: 100%;
   }
-  .icon-slide.active {
+  
+  .nav-list.active {
     display: flex;
   }
-  .card {
-    background: #fff;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  
+  .carousel-item img {
+    height: 400px;
   }
-  .card button {
-    background: #3399ff;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+  
+  .plans-container {
+    flex-direction: column;
+    align-items: center;
   }
-  .faq-item {
-    background: white;
-    margin: 10px;
-    padding: 10px;
-    border-left: 5px solid #3399ff;
+  
+  .plan-card {
+    max-width: 100%;
   }
-  .redes a {
-    margin: 5px;
-    color: #3399ff;
+  
+  .contact-container {
+    flex-direction: column;
   }
-  iframe {
-    width: 100%;
+}
+
+@media (max-width: 576px) {
+  .carousel-item img {
     height: 300px;
-    border: none;
   }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .input-group input {
+    border-radius: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .input-group button {
+    border-radius: 50px;
+    justify-content: center;
+    padding: 12px;
+  }
+  
+  .faq-question {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .faq-question img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
