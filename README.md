@@ -20,7 +20,7 @@ Foi construída com **HTML, CSS e JavaScript**, prezando por um design limpo, re
 
 - **HTML5**  
 - **CSS3**  
-- **JavaScript Vanilla**
+- **JavaScript**
 
 ---
 
